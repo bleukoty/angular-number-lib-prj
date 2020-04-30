@@ -17,7 +17,21 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "telephone-number-formatter": [
+        "dist/telephone-number-formatter"
+      ],
+      "telephone-number-formatter/*": [
+        "dist/telephone-number-formatter/*"
+      ],
+      "phone-formatter": [
+        "dist/phone-formatter"
+      ],
+      "phone-formatter/*": [
+        "dist/phone-formatter/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

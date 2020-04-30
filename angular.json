@@ -2,5 +2,76 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "telephoneNumberFormatter": {
+      "projectType": "library",
+      "root": "projects/telephone-number-formatter",
+      "sourceRoot": "projects/telephone-number-formatter/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/telephone-number-formatter/tsconfig.lib.json",
+            "project": "projects/telephone-number-formatter/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/telephone-number-formatter/src/test.ts",
+            "tsConfig": "projects/telephone-number-formatter/tsconfig.spec.json",
+            "karmaConfig": "projects/telephone-number-formatter/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/telephone-number-formatter/tsconfig.lib.json",
+              "projects/telephone-number-formatter/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "phone-formatter": {
+      "projectType": "library",
+      "root": "projects/phone-formatter",
+      "sourceRoot": "projects/phone-formatter/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/phone-formatter/tsconfig.lib.json",
+            "project": "projects/phone-formatter/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/phone-formatter/src/test.ts",
+            "tsConfig": "projects/phone-formatter/tsconfig.spec.json",
+            "karmaConfig": "projects/phone-formatter/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/phone-formatter/tsconfig.lib.json",
+              "projects/phone-formatter/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "telephoneNumberFormatter"
 }
