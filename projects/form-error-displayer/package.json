@@ -15,5 +15,10 @@
     "angular",
     "reactive-form",
     "input-error"
-  ]
+  ],
+  "engines": {
+    "node": ">= 10.0.0",
+    "npm": ">= 6.0.0",
+    "angular": ">=8.0.0"
+  }
 }
