@@ -1,0 +1,19 @@
+{
+  "name": "@sir_koty/form-error-displayer",
+  "description": "form error dipslayer helps you to display input error messages in a configurable way",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
+  },
+  "author": {
+    "name": "Koty BLEU",
+    "email": "bleukoty@gmail.com"
+  },
+  "private": false,
+  "keywords": [
+    "angular",
+    "reactive-form",
+    "input-error"
+  ]
+}

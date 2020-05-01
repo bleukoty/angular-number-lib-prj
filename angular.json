@@ -72,6 +72,41 @@
           }
         }
       }
+    },
+    "form-error-displayer": {
+      "projectType": "library",
+      "root": "projects/form-error-displayer",
+      "sourceRoot": "projects/form-error-displayer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/form-error-displayer/tsconfig.lib.json",
+            "project": "projects/form-error-displayer/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/form-error-displayer/src/test.ts",
+            "tsConfig": "projects/form-error-displayer/tsconfig.spec.json",
+            "karmaConfig": "projects/form-error-displayer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/form-error-displayer/tsconfig.lib.json",
+              "projects/form-error-displayer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "telephoneNumberFormatter"
 }

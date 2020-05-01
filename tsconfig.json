@@ -30,6 +30,12 @@
       ],
       "phone-formatter/*": [
         "dist/phone-formatter/*"
+      ],
+      "form-error-displayer": [
+        "dist/form-error-displayer"
+      ],
+      "form-error-displayer/*": [
+        "dist/form-error-displayer/*"
       ]
     }
   },
