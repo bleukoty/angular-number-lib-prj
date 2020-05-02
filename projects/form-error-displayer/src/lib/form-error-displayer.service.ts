@@ -1,14 +1,12 @@
 import { Injectable, Optional, InjectionToken, Inject } from '@angular/core';
-import { ErrorObserver } from 'rxjs';
 
-export const SOME_CONST_VALUE = new InjectionToken<Array<ErrorMessage>>('');
-
+export const ERROR_LIST_DEFAULT_VALUE = new InjectionToken<Array<ErrorMessage>>('');
 
 @Injectable({providedIn: 'root'})
 export class FormErrorDisplayerService {
   errorsList: Array<ErrorMessage>;
 
-  constructor(@Inject(SOME_CONST_VALUE) @Optional() errorsList: Array<ErrorMessage> = []) {
+  constructor(@Inject(ERROR_LIST_DEFAULT_VALUE) @Optional() errorsList: Array<ErrorMessage>) {
     this.errorsList = errorsList;
   }
   getListOfMessage(keys: Array<string>) {

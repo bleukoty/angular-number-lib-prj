@@ -1,10 +1,11 @@
-import { Directive, Input, OnInit, HostListener } from '@angular/core';
+import { Directive, Input, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { FormErrorDisplayerService } from './form-error-displayer.service';
+import { Subscription } from 'rxjs';
 
 @Directive({
   selector: '[libFormErrorDisplayer]'
 })
-export class FormErrorDisplayerDirective implements OnInit {
+export class FormErrorDisplayerDirective implements OnInit, OnDestroy {
 
   @Input() validationMsgId: string;
   @Input() id: string;
@@ -16,6 +17,8 @@ export class FormErrorDisplayerDirective implements OnInit {
   // error span
   errorSpanId: string;
 
+  private subscription: Subscription;
+
   // inline style
   private inlineStyle = `color: red; display: block; font-size: 9pt`;
 
@@ -23,7 +26,7 @@ export class FormErrorDisplayerDirective implements OnInit {
 
   ngOnInit() {
     this.errorSpanId = `span-error-${this.id}-${new Date()}`;
-    this.control.statusChanges
+    this.subscription = this.control.statusChanges
       .subscribe(status => {
         if (status === 'INVALID') {
           this.showErrors();
@@ -31,6 +34,10 @@ export class FormErrorDisplayerDirective implements OnInit {
           this.removeErrors();
         }
       });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
   @HostListener('blur', ['$event'])
