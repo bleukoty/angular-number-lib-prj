@@ -38,7 +38,7 @@ export class PhoneFormatterDirective {
   constructor() {}
 
   @HostListener('keyup', ['$event.target']) onKeyUpEvent(input: any) {
-    let value = input.value.replace(/\D/g, ''); // Removes all non-digit characters
+    let value = input.value.replace(/\D/g, '').slice(0, 8); // Removes all non-digit characters
     if (value) {
       let macths: any;
       let result = [];
