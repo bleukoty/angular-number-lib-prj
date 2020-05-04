@@ -36,6 +36,12 @@
       ],
       "form-error-displayer/*": [
         "dist/form-error-displayer/*"
+      ],
+      "digit-formatter": [
+        "dist/digit-formatter"
+      ],
+      "digit-formatter/*": [
+        "dist/digit-formatter/*"
       ]
     }
   },
