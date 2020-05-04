@@ -1,8 +1,23 @@
 {
-  "name": "digit-formatter",
+  "name": "@sir_koty/digit-formatter",
+  "description": "digit formatter by thousands with customable space character",
+  "engines": {
+    "angular": ">= 8.0.0",
+    "node": ">= 10.0.0",
+    "tsc": ">= 3.0.0"
+  },
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^8.2.7",
     "@angular/core": "^8.2.7"
-  }
+  },
+  "private": false,
+  "author": {
+    "name": "BLEU Koty",
+    "email": "bleukoty@gmail.com"
+  },
+  "keywords": [
+    "angular",
+    "number formatter"
+  ]
 }

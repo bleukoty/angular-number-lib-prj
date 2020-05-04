@@ -2,23 +2,35 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.7.
 
-## Code scaffolding
+# Description
 
-Run `ng generate component component-name --project digit-formatter` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project digit-formatter`.
-> Note: Don't forget to add `--project digit-formatter` or else it will be added to the default project in your `angular.json` file. 
+This library helps you to format all your numbers per thousand with a custom space character. By default the space character is ' '
 
-## Build
+# Demo
 
-Run `ng build digit-formatter` to build the project. The build artifacts will be stored in the `dist/` directory.
+stackblitz : https://stackblitz.com/edit/format-number
 
-## Publishing
+# Usage 
 
-After building your library with `ng build digit-formatter`, go to the dist folder `cd dist/digit-formatter` and run `npm publish`.
+### app.module.ts
+...
+    import { DigitFormatterModule} from '@sir_koty/digit-formatter';
+...
+    @NgModule({
+    ...
+    imports: [
+        ...
+        DigitFormatterModule,
+        ...
+    ],
+    providers: [{ provide: FormErrorDisplayerService, useValue: service}],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
 
-## Running unit tests
 
-Run `ng test digit-formatter` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### app.component.html
+    ...
+    <input type="text" libDigitFormatter spacingCaracter='.' />
+    ...
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).

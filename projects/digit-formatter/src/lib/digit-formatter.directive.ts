@@ -5,7 +5,7 @@ import { Directive, HostListener, Input } from '@angular/core';
 })
 export class DigitFormatterDirective {
 
-  @Input() spacingCaracter = ' ';
+  @Input() spaceCharacter = ' ';
 
   // Partant de la droite,
   // ce pattern matchs les 3 derniers chiffres de la chaîne de caractères
@@ -16,9 +16,15 @@ export class DigitFormatterDirective {
 
   @HostListener('keyup', ['$event.target'])
   onKeyUp(target) {
-    let value = target.value.replace(/ /g, '');
+    let value = target.value.replace(/\D/g, '');
     let finMot: any;
     const result = [];
+
+    if (value.length > 1 ) {
+      value =  value.replace(/^0*/, ''); // delete all zero at the beginning of number
+       // after the previous operation value = '00', becomes empty, to prevent that we reset it to '0'
+      value =  value.length === 0 ? '0' : value;
+    }
 
     /*
     1 : Itération en extrayant à chaque fois, les trois (3) derniers caractères du mot
@@ -35,7 +41,7 @@ export class DigitFormatterDirective {
       }
     } while (value);
 
-    target.value = result.join(this.spacingCaracter);
+    target.value = result.join(this.spaceCharacter);
 
   }
 }
