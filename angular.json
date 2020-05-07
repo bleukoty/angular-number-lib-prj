@@ -142,6 +142,41 @@
           }
         }
       }
+    },
+    "document-viewer": {
+      "projectType": "library",
+      "root": "projects/document-viewer",
+      "sourceRoot": "projects/document-viewer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/document-viewer/tsconfig.lib.json",
+            "project": "projects/document-viewer/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/document-viewer/src/test.ts",
+            "tsConfig": "projects/document-viewer/tsconfig.spec.json",
+            "karmaConfig": "projects/document-viewer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/document-viewer/tsconfig.lib.json",
+              "projects/document-viewer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "telephoneNumberFormatter"
 }

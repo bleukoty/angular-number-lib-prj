@@ -42,6 +42,12 @@
       ],
       "digit-formatter/*": [
         "dist/digit-formatter/*"
+      ],
+      "document-viewer": [
+        "dist/document-viewer"
+      ],
+      "document-viewer/*": [
+        "dist/document-viewer/*"
       ]
     }
   },
