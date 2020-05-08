@@ -9,13 +9,21 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 export class DocumentViewerComponent implements OnInit {
   navigationButtonText = 'Liste des dossiers';
 
+  folderId = 'N° CCC-VVV';
+  docType = 'Pièce d\'identité';
+
+  iconLeft = true;
+
+  data = [1, 3];
+
+
   constructor() { }
 
   ngOnInit() {
   }
 
   navigationClick() {
-    console.log("navigation c")
-    this.navigationButtonText = this.navigationButtonText === 'Liste des dossiers' ? 'Dossier Actif' : 'Liste des dossiers';
+    this.navigationButtonText = this.iconLeft ? 'Dossier Actif' : 'Liste des dossiers';
+    this.iconLeft = !this.iconLeft;
   }
 }

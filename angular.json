@@ -153,7 +153,8 @@
           "builder": "@angular-devkit/build-ng-packagr:build",
           "options": {
             "tsConfig": "projects/document-viewer/tsconfig.lib.json",
-            "project": "projects/document-viewer/ng-package.json"
+            "project": "projects/document-viewer/ng-package.json",
+            "preserveSymlinks": true   
           }
         },
         "test": {
@@ -178,5 +179,5 @@
         }
       }
     }},
-  "defaultProject": "telephoneNumberFormatter"
+  "defaultProject": "document-viewer"
 }
