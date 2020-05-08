@@ -18,8 +18,8 @@ export class IconDisplayerDirective implements OnInit {
 
   getIconTag() {
     switch(this.iconType) {
-       case IconType.document: return '<i class="fas fa-file" style="margin-right: 5px"></i>';
-       case IconType.folder: return '<i class="fas fa-folder" style="margin-right: 5px"></i>';
+       case IconType.document: return '<i class="far fa-file" style="margin-right: 5px"></i>';
+       case IconType.folder: return '<i class="far fa-folder" style="margin-right: 5px"></i>';
        default: return '<i class="far fa-file-image" style="margin-right: 5px"></i>';
     }
   }
