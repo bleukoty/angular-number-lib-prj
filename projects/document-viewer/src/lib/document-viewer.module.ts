@@ -3,13 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule, NgIf} from '@angular/common';
 import { DocumentViewerComponent } from './document-viewer.component';
 import { ToogleButtonDirective } from './toogle-button.directive';
+import { ShareModule } from './share/share.module';
 
 
 
 @NgModule({
   imports: [
-    // BrowserModule,
-    CommonModule
+    CommonModule,
+    ShareModule
   ],
   declarations: [DocumentViewerComponent, ToogleButtonDirective],
   exports: [DocumentViewerComponent]

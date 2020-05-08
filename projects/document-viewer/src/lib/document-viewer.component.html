@@ -1,65 +1,47 @@
-<!-- <div class="main-grid">
-    <div class="header-zone">
-        Dossier : N° CCC-VVV <br/>
-        <small>Document : carte d'identité</small> 
-    </div>
-    <div class="aside-grid-zone">
-        <div class="navigation-zone" (click)="navigationClick()">
-            <div class="navigation-button">
-                {{ navigationButtonText }} 
-            </div>
-        </div>
-        <div class="search-zone">
-            <i class="fa fa-eye"></i>
-        </div>
-        <div class="items-list-zone">
-            Liste
-        </div>
-    </div>
-    <div class="content-grid-zone">
-        <div class="document-viewer">
-            Content
-        </div>
-        <div class="commands">
-            Mes commandes
-        </div>
-    </div>
-</div> -->
-
-<div class="container-fluid">
+<div class="container-fluid" style="display: flex; flex-direction: column; height: 100%;">
 
     <!---HEADER -->
-    <div class="row">
-        <div class="col-12">
-            <h5>Dossier : {{ folderId }}</h5>
-            <small>{{ docType }}</small>
+    <div class="row p-3">
+        <div class="col-12 top">
+            <i class="far fa-caret-square-left"></i>
+            <div style="text-align: center;">
+                <h5>Dossier : {{ folderId }}</h5>
+                <small>{{ docType }}</small>
+            </div>
+            <i class="far fa-caret-square-right"></i>
         </div>
     </div>
 
     <!-- CONTENT -->
-    <div class="row p-3">
+    <div class="row p-3" style="flex: 1;">
         <!-- ASIDE -->
-        <div class="col-3">
+        <div class="aside col-3">
             <button type="button" class="btn btn-primary btn-lg btn-block" (click)="navigationClick()">
-                <i class="fas fa-arrow-alt-circle-left"></i>
+                <i class="fas fa-arrow-alt-circle-left" *ngIf="iconLeft"></i>
                 {{ navigationButtonText }}
+                <i class="fas fa-arrow-alt-circle-right" *ngIf="!iconLeft"></i>
             </button>
             <div class="input-group my-3">
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                <input type="text" class="form-control" [placeholder]="placeholder" aria-label="Looking for some items">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>
             </div>
-            <div class="my-3">
-                <div>
-                    <span>ghhgh</span>
+            <div class="doc-container my-3 p-1">
+                <div class="doc-box px-2 mt-2" *ngFor="let item of documentList; let i = index;">
+                    <span #f [libIconDisplayer]=f [iconType]=i >{{ item }}</span>
                 </div>
-
             </div>
         </div>
+
         <!-- MAIN -->
-        <div class="col-9">
-            DOCUMENT DIPSLAY
+        <div class="col-9" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="document-screen p-3">
+                CONTENT
+            </div>
+            <div class="commands-zone my-3 p-3">
+                COMMANDS
+            </div>
         </div>
     </div>
 </div>
