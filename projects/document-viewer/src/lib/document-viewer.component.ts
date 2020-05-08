@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  encapsulation: ViewEncapsulation.None,
+  // encapsulation: ViewEncapsulation.None,
   selector: 'lib-document-viewer',
   templateUrl: '../lib/document-viewer.component.html',
   styleUrls: ['../lib/document-viewer.component.scss']
