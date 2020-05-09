@@ -1,5 +1,5 @@
 import { Directive, ElementRef, OnInit, Input } from '@angular/core';
-import { IconType } from './enum';
+import { IconType } from '../enum';
 
 @Directive({
   selector: '[libIconDisplayer]'

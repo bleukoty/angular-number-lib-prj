@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule, NgIf} from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { DocumentViewerComponent } from './document-viewer.component';
-import { ToogleButtonDirective } from './toogle-button.directive';
+import { ToogleButtonDirective } from './directives/toogle-button.directive';
 import { ShareModule } from './share/share.module';
-
+import { AsideComponent } from './components/aside/aside.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @NgModule({
@@ -12,7 +12,7 @@ import { ShareModule } from './share/share.module';
     CommonModule,
     ShareModule
   ],
-  declarations: [DocumentViewerComponent, ToogleButtonDirective],
+  declarations: [DocumentViewerComponent, AsideComponent, HeaderComponent],
   exports: [DocumentViewerComponent]
 })
 export class DocumentViewerModule { }

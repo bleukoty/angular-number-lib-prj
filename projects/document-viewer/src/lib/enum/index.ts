@@ -3,3 +3,8 @@ export enum IconType {
     document,
     image
 }
+
+export enum DisplayMode {
+    folder = 1,
+    document
+}

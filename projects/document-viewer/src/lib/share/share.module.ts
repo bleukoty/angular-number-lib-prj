@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { IconDisplayerDirective } from '../icon-displayer.directive';
+import { IconDisplayerDirective } from '../directives/icon-displayer.directive';
+import { ToogleButtonDirective } from '../directives/toogle-button.directive';
 
 @NgModule({
-  declarations: [IconDisplayerDirective],
+  declarations: [IconDisplayerDirective, ToogleButtonDirective],
   imports: [], 
-  exports: [IconDisplayerDirective]
+  exports: [IconDisplayerDirective, ToogleButtonDirective]
 })
 export class ShareModule { }

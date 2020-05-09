@@ -16,13 +16,13 @@
     <div class="row p-3" style="flex: 1;">
         <!-- ASIDE -->
         <div class="aside col-3">
-            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="navigationClick()">
-                <i class="fas fa-arrow-alt-circle-left" *ngIf="iconLeft"></i>
-                {{ navigationButtonText }}
-                <i class="fas fa-arrow-alt-circle-right" *ngIf="!iconLeft"></i>
+            <button type="button" #button [libToogleButton]=button [indicator]=isDisplayModeDocument [toogleValues]=navigationButtonToogleValues
+                    toogleProperty='innerHTML'
+                    class="btn btn-primary btn-lg btn-block" (click)="navigationClick()">
             </button>
             <div class="input-group my-3">
-                <input type="text" class="form-control" [placeholder]="placeholder" aria-label="Looking for some items">
+                <input type="text" class="form-control" #filter [libToogleButton]=filter [indicator]=isDisplayModeDocument [toogleValues]=filterInputToogleValues
+                    toogleProperty='placeholder' aria-label="Looking for some items">
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="fas fa-search"></i></span>
                 </div>

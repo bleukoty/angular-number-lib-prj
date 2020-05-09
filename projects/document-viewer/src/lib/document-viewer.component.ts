@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
+import { DisplayMode } from './enum';
 
 @Component({
   // encapsulation: ViewEncapsulation.None,
@@ -7,6 +8,19 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['../lib/document-viewer.component.scss']
 })
 export class DocumentViewerComponent implements OnInit {
+
+  // list of data
+  @Input() data: Array<any>;
+
+  // item selected
+  itemSelected: any;
+
+  // Displays folders or documents
+  displayMode: DisplayMode;
+  navigationButtonToogleValues = [ '<i class="fas fa-arrow-alt-circle-left"></i> Liste des dossiers',
+                                   'Dossier actif <i class="fas fa-arrow-alt-circle-right"></i>'];
+  filterInputToogleValues = ['Rechercher un document...', 'Rechercher un dossier...'];
+
   navigationButtonText = 'Liste des dossiers';
   placeholder = 'Rechercher un document...';
 
@@ -17,17 +31,24 @@ export class DocumentViewerComponent implements OnInit {
 
   iconLeft = true;
 
-  data = [1, 3];
-
 
   constructor() { }
 
   ngOnInit() {
+    // Displaying mode
+    if (this.itemSelected) {
+      this.displayMode = DisplayMode.document;
+    } else {
+      this.displayMode = DisplayMode.folder;
+    }
+
   }
 
   navigationClick() {
-    this.navigationButtonText = this.iconLeft ? 'Dossier Actif' : 'Liste des dossiers';
-    this.placeholder = this.iconLeft ? 'Rechercher un document...' : 'Rechercher un dossier...'; 
-    this.iconLeft = !this.iconLeft;
+    this.displayMode = this.displayMode === DisplayMode.document ? DisplayMode.folder : DisplayMode.document;
+  }
+
+  get isDisplayModeDocument() {
+    return this.displayMode === DisplayMode.document;
   }
 }
