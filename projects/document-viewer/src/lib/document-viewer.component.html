@@ -15,7 +15,7 @@
     <!-- CONTENT -->
     <div class="row p-3" style="flex: 1;">
         <!-- ASIDE -->
-        <div class="aside col-3">
+        <!-- <div class="aside col-3">
             <button type="button" #button [libToogleButton]=button [indicator]=isDisplayModeDocument [toogleValues]=navigationButtonToogleValues
                     toogleProperty='innerHTML'
                     class="btn btn-primary btn-lg btn-block" (click)="navigationClick()">
@@ -32,8 +32,10 @@
                     <span #f [libIconDisplayer]=f [iconType]=i >{{ item }}</span>
                 </div>
             </div>
+        </div> -->
+        <div class="aside col-3">
+            <lib-aside [displayMode]=displayMode></lib-aside>
         </div>
-
         <!-- MAIN -->
         <div class="col-9" style="display: flex; flex-direction: column; height: 100%;">
             <div class="document-screen p-3">

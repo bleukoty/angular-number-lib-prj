@@ -1,0 +1,54 @@
+.navigation-button {
+}
+
+.doc-container {
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.aside {
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+
+    i {
+        font-size: 3vh;
+    }
+}
+
+.commands-zone {
+    height: 8vh;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+.document-screen {
+    flex: 1;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.doc-box {
+    height: 3vh;
+    border: 2px solid #eee;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        background-color: #d4d5d9;
+        cursor: pointer;
+    }
+}
