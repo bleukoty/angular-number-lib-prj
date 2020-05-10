@@ -2,29 +2,16 @@
 
     <!---HEADER -->
     <div class="row p-3">
-        <div class="col-12 top">
-            <i class="far fa-caret-square-left"></i>
-            <div style="text-align: center;">
-                <h5>Dossier : {{ folderId }}</h5>
-                <small>{{ docType }}</small>
-            </div>
-            <i class="far fa-caret-square-right"></i>
-        </div>
+        <lib-header class="col-12 top"></lib-header>
     </div>
 
     <!-- CONTENT -->
     <div class="row p-3" style="flex: 1;">
         <!-- ASIDE -->
-        <lib-aside class="aside col-3" [displayMode]=displayMode></lib-aside>
+        <lib-aside class="aside col-3" [data]=data [displayMode]=displayMode></lib-aside>
 
         <!-- MAIN -->
-        <div class="col-9" style="display: flex; flex-direction: column; height: 100%;">
-            <div class="document-screen p-3">
-                CONTENT
-            </div>
-            <div class="commands-zone my-3 p-3">
-                COMMANDS
-            </div>
-        </div>
+        <lib-displayer class="col-9" style="display: flex; flex-direction: column; height: 100%;"></lib-displayer>
+
     </div>
 </div>

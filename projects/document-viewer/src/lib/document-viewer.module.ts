@@ -5,6 +5,7 @@ import { ToogleButtonDirective } from './directives/toogle-button.directive';
 import { ShareModule } from './share/share.module';
 import { AsideComponent } from './components/aside/aside.component';
 import { HeaderComponent } from './components/header/header.component';
+import { DisplayerComponent } from './components/displayer/displayer.component';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { HeaderComponent } from './components/header/header.component';
     CommonModule,
     ShareModule
   ],
-  declarations: [DocumentViewerComponent, AsideComponent, HeaderComponent],
+  declarations: [DocumentViewerComponent, AsideComponent, HeaderComponent, DisplayerComponent],
   exports: [DocumentViewerComponent]
 })
 export class DocumentViewerModule { }

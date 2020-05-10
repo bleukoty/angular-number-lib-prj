@@ -1,4 +1,4 @@
-export enum IconType {
+export enum ItemType {
     folder = 1,
     document,
     image

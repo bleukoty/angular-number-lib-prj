@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  folderId = 'N° CCC-VVV';
+  docType = 'Pièce d\'identité';
   constructor() { }
 
   ngOnInit() {

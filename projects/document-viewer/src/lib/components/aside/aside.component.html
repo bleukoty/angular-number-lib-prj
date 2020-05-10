@@ -9,8 +9,17 @@
         <span class="input-group-text"><i class="fas fa-search"></i></span>
     </div>
 </div>
+
 <div class="doc-container my-3 p-1">
-    <div class="doc-box px-2 mt-2" *ngFor="let item of documentList; let i = index;">
-        <span #f [libIconDisplayer]=f [iconType]=i>{{ item }}</span>
-    </div>
+    <ng-container *ngIf="!isDisplayModeDocument">
+        <div class="doc-box px-2 mt-2" *ngFor="let item of data; let i = index;" (click)="folderSelected(item)">
+            <span #f [libIconDisplayer]=f [iconType]=item.type>{{ item.libelle }}</span>
+        </div>
+    </ng-container>
+    
+    <ng-container *ngIf=isDisplayModeDocument>
+        <div class="doc-box px-2 mt-2" *ngFor="let item of selectedFolderFiles; let i = index;" (click)="docSelected(item)">
+            <span #f [libIconDisplayer]=f [iconType]=item.type>{{ item.libelle }}</span>
+        </div>
+    </ng-container>
 </div>
